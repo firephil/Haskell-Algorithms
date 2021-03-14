@@ -1,5 +1,7 @@
 import Data.List (partition)
 
+# on line implementation
+
 qsort1 [] = []
 qsort1 (x:xs) = qsort1 [y | y <- xs, y < x] ++ [x] ++ qsort1 [y | y <- xs, y >= x]
 
