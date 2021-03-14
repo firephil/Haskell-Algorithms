@@ -2,7 +2,8 @@ cabal-version:      2.4
 name:               Haskell-Algorithms
 version:            0.1.0.0
 
-synopsis:           Common algorithms implemented in Haskell
+-- A short (one-line) description of the package.
+synopsis: Common Algorithms implemented in Haskell
 
 -- A longer description of the package.
 -- description:
@@ -23,8 +24,8 @@ synopsis:           Common algorithms implemented in Haskell
 -- copyright:
 -- category:
 extra-source-files:
-    CHANGELOG.md
     README.md
+    CHANGELOG.md
 
 executable Haskell-Algorithms
     main-is:          Main.hs

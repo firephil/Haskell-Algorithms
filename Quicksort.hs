@@ -17,15 +17,15 @@ quicksort :: [Int] -> [Int]
 quicksort [] = []
 quicksort list  = quicksort left ++ pivotlist ++ quicksort right
   where
-    pivot :: Int
+    --pivot :: Int
     pivot = head list
 
-    pivotlist :: [Int]
+    --pivotlist :: [Int]
     pivotlist = filter( == pivot) list
 
-    left :: [Int]
+    --left :: [Int]
     left = filter(< pivot) list
 
-    right :: [Int]
+   -- right :: [Int]
     right = filter(> pivot) list
 
