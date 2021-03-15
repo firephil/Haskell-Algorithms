@@ -1,5 +1,6 @@
 import Data.List (partition)
---import Data.Time.Clock
+import Data.Time.Clock(getCurrentTime,diffUTCTime)
+import Control.Exception
 
 -- one line implementation
 qsort1 [] = []
@@ -22,22 +23,21 @@ quicksort list  = quicksort left ++ pivotlist ++ quicksort right
      left = filter(< pivot) list
      right = filter(> pivot) list
 
-ls = [5,2,2,3,3,1,4,0,2]
-xs = quicksort ls
-ys = qsort ls
-
-doMyThing = do
-              start <- getCurrentTime
-              quicksort ls
-              end  <- getCurrentTime
-              return $ diffUTCTime end start
-
-
-
-
+ls = reverse [1..5000]
 
 main :: IO ()
 main = do
-          print(doMyThing)
-          getLine -- wait for a key press to exit
-          print("exit")
+        start <- getCurrentTime
+        evaluate (qsort ls)
+        end   <- getCurrentTime
+        print (diffUTCTime end start)
+
+        start <- getCurrentTime
+        evaluate (quicksort ls)
+        end   <- getCurrentTime
+        print (diffUTCTime end start)
+
+        start <- getCurrentTime
+        evaluate (qsort1 ls)
+        end   <- getCurrentTime
+        print (diffUTCTime end start)
