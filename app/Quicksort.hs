@@ -1,7 +1,7 @@
 import Data.List (partition)
+--import Data.Time.Clock
 
-  -- one line implementation
-
+-- one line implementation
 qsort1 [] = []
 qsort1 (x:xs) = qsort1 [y | y <- xs, y < x] ++ [x] ++ qsort1 [y | y <- xs, y >= x]
 
@@ -22,8 +22,22 @@ quicksort list  = quicksort left ++ pivotlist ++ quicksort right
      left = filter(< pivot) list
      right = filter(> pivot) list
 
+ls = [5,2,2,3,3,1,4,0,2]
+xs = quicksort ls
+ys = qsort ls
+
+doMyThing = do
+              start <- getCurrentTime
+              quicksort ls
+              end  <- getCurrentTime
+              return $ diffUTCTime end start
+
+
+
+
+
 main :: IO ()
 main = do
-        print(quicksort [5,2,2,3,3,1,4,0,2])
-        getLine -- wait for a key press to exit
-        print("Press a enter to exit")
+          print(doMyThing)
+          getLine -- wait for a key press to exit
+          print("exit")
