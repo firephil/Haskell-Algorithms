@@ -29,3 +29,8 @@ quicksort list  = quicksort left ++ pivotlist ++ quicksort right
    -- right :: [Int]
     right = filter(> pivot) list
 
+main :: IO ()
+
+main = do
+        putStrLn $ show  (quicksort [5,2,3,1,4,0,2])
+        line <- getLine -- wait for a key press to exit
