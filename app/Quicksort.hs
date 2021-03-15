@@ -1,6 +1,7 @@
 import Data.List (partition)
 import Data.Time.Clock(getCurrentTime,diffUTCTime)
 import Control.Exception
+import Timer(execute)
 
 -- one line implementation
 qsort1 [] = []
@@ -27,17 +28,6 @@ ls = reverse [1..5000]
 
 main :: IO ()
 main = do
-        start <- getCurrentTime
-        evaluate (qsort ls)
-        end   <- getCurrentTime
-        print (diffUTCTime end start)
-
-        start <- getCurrentTime
-        evaluate (quicksort ls)
-        end   <- getCurrentTime
-        print (diffUTCTime end start)
-
-        start <- getCurrentTime
-        evaluate (qsort1 ls)
-        end   <- getCurrentTime
-        print (diffUTCTime end start)
+          execute (qsort ls)
+          execute (quicksort ls)
+          execute (qsort1 ls)

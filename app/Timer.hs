@@ -1,8 +1,8 @@
+module Timer where
 import Data.Time.Clock(getCurrentTime,diffUTCTime)
 import Control.Exception
-module Timer where
 
-  exec  f ::[Int]-> [Int] = do
+execute f = do
         start <- getCurrentTime
         evaluate (f)
         end   <- getCurrentTime
