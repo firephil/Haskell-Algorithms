@@ -1,14 +1,7 @@
-module MergeSort where
+module Mergesort where
 
-import Data.List (partition)
-import Data.Time.Clock(getCurrentTime,diffUTCTime)
-import Control.Exception
-import Timer(execute)
-
-mergesort :: [Int] -> [Int]
-
-ls = reverse [1..5000]
-
-main :: IO ()
-main = do
-          execute (mergesort ls)
+mergesort :: [Int] -> [Int] ->[Int]
+mergesort xs [] = xs
+mergesort [] ys = ys
+mergesort (x:xs) (y:ys) | x <= y    = x:mergesort xs (y:ys)
+                    | otherwise = y:mergesort (x:xs) ys

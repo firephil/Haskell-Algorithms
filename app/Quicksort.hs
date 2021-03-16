@@ -1,7 +1,6 @@
+module Quicksort where
 import Data.List (partition)
-import Data.Time.Clock(getCurrentTime,diffUTCTime)
-import Control.Exception
-import Timer(execute)
+
 
 -- one line implementation
 qsort1 [] = []
@@ -23,11 +22,3 @@ quicksort list  = quicksort left ++ pivotlist ++ quicksort right
      pivotlist = filter( == pivot) list
      left = filter(< pivot) list
      right = filter(> pivot) list
-
-ls = reverse [1..5000]
-
-main :: IO ()
-main = do
-          execute (qsort ls)
-          execute (quicksort ls)
-          execute (qsort1 ls)
