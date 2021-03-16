@@ -35,10 +35,15 @@ executable Haskell-Algorithms
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
     build-depends:    base ^>=4.14.1.0,
-                      time >=1.1
-    packages: Timer,
-              Mergesort
-              Quicksort
+                      time >=1.1,
+                      random >=0.1,
+					  array >= 0.5,
+					  MonadRandom >= 0.5
+
+    other-modules: Timer,
+                   Mergesort,
+                   Quicksort,
+				   ShuffleList
 
     hs-source-dirs:   app
     default-language: Haskell2010
