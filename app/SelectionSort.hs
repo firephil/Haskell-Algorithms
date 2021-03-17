@@ -1,3 +1,4 @@
+-- https://riptutorial.com/haskell/example/12246/selection-sort
 module SelectionSort where
 
 import Data.List (minimum, delete)
