@@ -4,10 +4,11 @@ import Mergesort(mergeSort)
 import System.Random
 import Control.Monad.Random
 
-import ShuffleList(shuffle)
+import ShuffleList(shuffle,fisherYates )
 
-ls = [1..10000]
+ls = [1..8000]
 rev = reverse ls
+xs = fisherYates ls
 
 main :: IO ()
 main =  do
