@@ -8,6 +8,9 @@
 
 #### - InsertionSort
 
+#### - SelectionSort
+
+
 ### Utility Algorithms
 
 #### - Random Shuffle elements of a List  (ShuffleList.hs)
