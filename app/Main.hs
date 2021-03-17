@@ -4,14 +4,17 @@ import Mergesort(mergeSort)
 import System.Random
 import Control.Monad.Random
 
-import ShuffleList(shuffle,fisherYates )
+import ShuffleList(shuffle)
+import STshuffle(st_shuffle)
 
 ls = [1..8000]
 rev = reverse ls
-xs = fisherYates ls
+--xs = st_shuffle ls
+
 
 main :: IO ()
 main =  do
+
           values <- evalRandIO(shuffle ls)  -- store Random[[Int]] to values list (unwrap monad)
           execute (quicksort values)
           execute (mergeSort values)
