@@ -1,13 +1,14 @@
 import Timer(execute)
 import Quicksort(qsort,qsort1,quicksort)
 import Mergesort(mergeSort)
-import System.Random
-import Control.Monad.Random
-
 import ShuffleList(shuffle)
 import STshuffle(st_shuffle)
 import InsertionSort(insertionSort)
 import SelectionSort(selectionSort)
+import BubbleSort(bubbleSort)
+
+import System.Random
+import Control.Monad.Random
 
 ls = [1..900000]
 rev = reverse ls
@@ -21,6 +22,7 @@ main =  do
           execute (mergeSort values)
           execute (insertionSort values)
           execute (selectionSort values)
+          execute (bubbleSort values)
 
           putStrLn("")
           putStrLn("Sorting a reverse sorted list...")
@@ -28,3 +30,4 @@ main =  do
           execute (mergeSort rev) -- merge sort is a stable sort O(n(log(n)))
           execute (insertionSort rev)
           execute (selectionSort rev)
+          execute (bubbleSort rev)
