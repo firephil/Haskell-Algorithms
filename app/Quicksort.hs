@@ -16,9 +16,9 @@ qsort (x:xs) = qsort ys ++ x : qsort zs
 
 quicksort :: [Int] -> [Int]
 quicksort [] = []
-quicksort list  = quicksort left ++ pivotlist ++ quicksort right
+quicksort list  = quicksort left ++ pivot_list ++ quicksort right
   where
      pivot = head list
-     pivotlist = filter( == pivot) list
+     pivot_list = filter( == pivot) list
      left = filter(< pivot) list
      right = filter(> pivot) list
