@@ -35,13 +35,14 @@ executable Haskell-Algorithms
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
     build-depends:  base ^>=4.14.1.0,
-                    time >=1.1,
-                    random >=0.1,
+					time >=1.1,
+					random >=0.1,
 					array >= 0.5,
 					MonadRandom >= 0.5,
 					containers >= 0.1
 
-    other-modules:  Timer,
+    other-modules:
+					Timer,
 					Mergesort,
 					Quicksort,
 					ShuffleList,
