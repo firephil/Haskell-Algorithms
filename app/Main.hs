@@ -7,10 +7,11 @@ import InsertionSort(insertionSort)
 import SelectionSort(selectionSort)
 import BubbleSort(bubbleSort)
 
+import Data.List(sort)
 import System.Random
 import Control.Monad.Random
 
-ls = [1..900000]
+ls = [1..9000]
 rev = reverse ls
 
 
@@ -23,7 +24,7 @@ main =  do
           execute (insertionSort values)
           execute (selectionSort values)
           execute (bubbleSort values)
-          execute (Data.List.Sort  values) -- library sort
+          execute (sort  values) -- library sort
 
           putStrLn("")
           putStrLn("Sorting a reverse sorted list...")
@@ -32,4 +33,4 @@ main =  do
           execute (insertionSort rev)
           execute (selectionSort rev)
           execute (bubbleSort rev)
-          execute (Data.List.Sort  rev)
+          execute (sort  rev)
