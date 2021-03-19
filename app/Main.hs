@@ -23,6 +23,7 @@ main =  do
           execute (insertionSort values)
           execute (selectionSort values)
           execute (bubbleSort values)
+          execute (Data.List.Sort  values) -- library sort
 
           putStrLn("")
           putStrLn("Sorting a reverse sorted list...")
@@ -31,3 +32,4 @@ main =  do
           execute (insertionSort rev)
           execute (selectionSort rev)
           execute (bubbleSort rev)
+          execute (Data.List.Sort  rev)
